@@ -1,26 +1,96 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary-bg: #0D0D0D;
+  --color-secondary-bg: #151515;
+  --color-purple-primary: #7B2CBF;
+  --color-purple-hover: #9D4EDD;
+  --color-gold: #D4AF37;
+  --color-white: #FFFFFF;
+  --color-light-text: #D8D8D8;
+  --color-border-custom: rgba(255, 255, 255, 0.08);
+
+  --font-sans: var(--font-inter), sans-serif;
+  --font-bebas: var(--font-bebas), sans-serif;
+  --font-script: var(--font-great-vibes), cursive;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #0D0D0D;
+  --foreground: #D8D8D8;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), sans-serif;
+}
+
+/* Custom Utilities for Luxury Vibe */
+.glassmorphism {
+  background: rgba(21, 21, 21, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glassmorphism-light {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #FFE082 0%, #D4AF37 50%, #B38F24 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-purple {
+  background: linear-gradient(135deg, #D48CFF 0%, #7B2CBF 60%, #4D0099 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Smooth custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0D0D0D;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #252525;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7B2CBF;
+}
+
+/* Custom styling for details/summary in FAQ */
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Base styles and utilities */
+.luxury-shadow {
+  box-shadow: 0 10px 50px -10px rgba(0, 0, 0, 0.7);
+}
+
+.glow-purple {
+  box-shadow: 0 0 30px rgba(123, 44, 191, 0.2);
+}
+
+.glow-gold {
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);
+}
+
+/* Remove default focus styles and add elegant borders */
+*:focus-visible {
+  outline: 2px solid #7B2CBF;
+  outline-offset: 2px;
 }
